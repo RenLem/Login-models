@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="hr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login model - blured</title>
+
+    <style>
+      body{
+        background-color: BLACK;
+        padding:0;
+        margin:0;
+      }
+      .video-container{
+        position:relative;
+        height:100vh;
+        overflow:hidden;
+      }
+      .big-video{
+        position:absolute;
+        left:0;
+        top:0;
+        width:100vw;
+      }
+      .inner-container{
+        width:400px;
+        height:400px;
+        position:absolute;
+        top:calc(50vh - 200px);
+        left:calc(50vw - 200px);
+        overflow:hidden;
+        border-radius: 10px;
+      }
+      .big-video.inner{
+        top:calc(-50vh + 200px);
+        left:calc(-50vw + 200px);
+        /* filter: url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='10'%20/></filter></svg>#blur"); */
+        -webkit-filter:blur(30px);
+        -ms-filter: blur(30px);
+        -o-filter: blur(30px);
+        filter:blur(30px);
+      }
+      .box{
+        position:absolute;
+        height:100%;
+        width:100%;
+        font-family:Helvetica;
+        color:#fff;
+        background:rgba(0,0,0,0.12);
+        padding:30px 0px;
+      }
+      .box h1{
+        text-align:center;
+        margin:30px 0;
+        font-size:30px;
+      }
+      .box input{
+        display:block;
+        width:300px;
+        margin:20px auto;
+        padding:15px;
+        background:rgba(0,0,0,0.2);
+        color:#fff;
+        border:0;
+        border-radius: 10px;
+      }
+      .box input:focus,.box input:active,.box button:focus,.box button:active{
+        outline:none;
+      }
+      .box button{
+        background:rgba(100%, 20%, 0%, 50%);
+        border:0;
+        color:#fff;
+        padding:10px;
+        font-size:20px;
+        width:330px;
+        margin:20px auto;
+        display:block;
+        cursor:pointer;
+        border-radius: 10px;
+      }
+      .box button:active{
+        background:#27ae60;
+      }
+      .box p{
+        font-size:14px;
+        text-align:center;
+      }
+      .box p span{
+        cursor:pointer;
+        color:#666;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="video-container">
+      <video class="big-video" autoplay="autoplay" muted="muted" preload="auto" loop>
+        <source src="Palms & clouds video standard.mp4" type="video/mp4">
+        <!-- <source src="http://mazwai.com/system/posts/videos/000/000/109/webm/leif_eliasson--glaciartopp.webm?1410742112" type="video/webm"> -->
+        </video>
+        <div class="inner-container">
+          <video class="big-video inner" autoplay="autoplay" muted="muted" preload="auto" loop>
+            <source src="Palms & clouds video standard.mp4" type="video/mp4">
+            <!-- <source src="http://mazwai.com/system/posts/videos/000/000/109/webm/leif_eliasson--glaciartopp.webm?random=1" type="video/webm"> -->
+            </video>
+            <div class="box">
+              <h1>Login</h1>
+              <input type="text" placeholder="Username"/>
+              <input type="text" placeholder="Password"/>
+              <button>Login</button>
+              <p>Not a member? <span>Sign Up</span></p>
+            </div>
+          </div>
+        </div>
+
+  </body>
+</html>
